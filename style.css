@@ -1,0 +1,534 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #070c13;
+  color: #ffffff;
+  font-family: Manrope, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Навигация */
+header {
+  min-height: 650px;
+  height: 100vh;
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  top: 25px;
+  right: 9%;
+  display: flex;
+  gap: 30px;
+  padding: 20px 40px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#070c13) padding-box,
+    linear-gradient(90deg, #314b5c, #679ec2, #314b5c) border-box;
+  border-radius: 145px;
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  color: #c5cdd4;
+  opacity: 50%;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffffff;
+  opacity: 100%;
+  text-decoration: underline;
+  text-decoration-color: #00d9ff;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+/* Главный экран */
+.hero {
+  position: absolute;
+  top: 34%;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 76px);
+  font-weight: normal;
+  letter-spacing: 10%;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff, #00bded);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #a9b5c2;
+  margin-top: 20px;
+}
+
+.down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  border-radius: 50%;
+  color: white;
+  margin: 100px auto;
+  transition: 0.3s;
+  font-weight: 200;
+  font-size: 52px;
+  text-decoration: none;
+}
+
+.down:hover {
+  border-color: #00d9ff;
+  color: #00d9ff;
+  transform: translateY(5px);
+}
+
+/* Декоративные пузыри */
+.bubbles-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubble-img {
+  position: absolute;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+/* 1. Левый верхний МЕТАБОЛ */
+.pos-1 {
+  width: 18.95vw; /* 364px */
+  top: -12.4vh; /* -134px */
+  left: 0.05vw; /* 1px */
+}
+
+/* 2. Верхний центральный ШАР */
+.pos-2 {
+  width: 7.44vw; /* 143px */
+  top: 13.88vh; /* 150px */
+  left: 19.16vw; /* 368px */
+}
+
+/* 3. Правый средний */
+.pos-3 {
+  width: 10.78vw; /* 207px */
+  top: -5vh; /* -54px */
+  right: 27.76vw; /* 533px */
+}
+
+/* 4. правый угловой */
+.pos-4 {
+  width: 32.23vw; /* 619px */
+  top: -23.7vh; /* -256px */
+  right: -7.91vw; /* -152px */
+}
+
+/* 5. Левый нижний ОГРОМНЫЙ ШАР */
+.pos-5 {
+  width: 27.18vw; /* 522px */
+  top: 45vh; /* 486px */
+  left: -8.02vw; /* -154px */
+}
+
+/* 6. Мелкий ШАР слева */
+.pos-6 {
+  width: 4.94vw; /* 95px */
+  top: 43.88vh; /* 474px */
+  left: 20vw; /* 384px */
+}
+
+/* 7. Правый средний ШАР */
+.pos-7 {
+  width: 10.26vw; /* 197px */
+  top: 35.55vh; /* 384px */
+  right: 19.16vw; /* 368px */
+}
+
+/* 8. Правый нижний метабол */
+.pos-8 {
+  width: 18.95vw; /* 364px */
+  top: 44.16vh; /* 477px */
+  right: 0.26vw; /* 5px */
+}
+
+/* 9. центральный нижний тройной МЕТАБОЛ */
+.pos-9 {
+  min-width: 21.66vw; /* 416px */
+  top: 40.46vh; /* 437px */
+  left: 23.33vw; /* 448px */
+}
+
+/* Проекты */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 40px 8%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 90px;
+}
+
+.projects-grid {
+  max-width: 1174px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 45px;
+}
+
+.project {
+  height: 195px;
+  width: 100%; /* Вместо жестких 360px */
+  max-width: 360px; /* Ограничитель, чтобы не растягивались */
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 1px solid transparent;
+  color: #00bdeb;
+  background:
+    linear-gradient(#070c13) padding-box,
+    linear-gradient(90deg, #314b5c, #679ec2, #314b5c) border-box;
+  position: relative;
+  margin: 0 auto;
+}
+
+.project::after {
+  content: "";
+  width: 70px;
+  height: 70px;
+  border: 2px solid #00bdeb;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.project:hover {
+  border-color: #00bdeb;
+  transform: translateY(-5px);
+}
+
+/* Контакты */
+#contacts {
+  margin-top: 90px;
+  position: relative;
+  padding: 116px 8%;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 70%;
+}
+
+#contacts::before {
+  content: "";
+  position: absolute;
+  width: 67.7vw; /* 1300px */
+  height: 120.37vh; /* 1300px */
+  top: 3.7vh; /* 40px */
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background:
+    linear-gradient(45deg, #101d2b, #070c13) padding-box,
+    linear-gradient(45deg, #38cfff 50%, #38cfff 0%) border-box;
+  z-index: -1;
+  opacity: 70%;
+}
+
+.contacts-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 135px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 250px;
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(0deg, #101d2b, #070c13) padding-box,
+    linear-gradient(90deg, #314b5c, #679ec2, #314b5c) border-box;
+  border-radius: 145px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  transition: 0.3s;
+}
+
+.contact:hover {
+  border: 2px solid #00bdeb;
+  transform: translateY(-5px);
+}
+
+/* Подвал */
+footer {
+  background:
+    linear-gradient(#070c13) padding-box,
+    linear-gradient(90deg, #314b5c, #679ec2, #314b5c) border-box;
+  border: 1px solid #29495c;
+  padding: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+/* Затемнение фона за модальным окном */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+dialog {
+  margin: auto;
+  border: 1px solid transparent;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%; /* Адаптивность для мобилок */
+  max-width: 400px; /* Чтобы не был гигантским на ПК */
+  background:
+    linear-gradient(#101d2b, #101d2b) padding-box,
+    linear-gradient(90deg, #314b5c, #679ec2, #314b5c) border-box;
+}
+
+/* Стили для формы внутри окна */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #a0b0c0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid #4a5a6a;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Кнопка отправки внутри формы */
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid #4a5a6a;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+/* =========================================
+   АДАПТАЦИЯ
+   ========================================= */
+
+/* Планшеты (1024px) */
+@media screen and (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .contacts-list {
+    gap: 40px; /* Уменьшили гигантский отступ 135px */
+  }
+}
+
+/* Мобильные телефоны (700px) */
+@media screen and (max-width: 700px) {
+  header {
+    min-height: 550px;
+  }
+
+  nav {
+    right: 50%;
+    transform: translateX(50%);
+    gap: 15px;
+    padding: 15px 25px;
+    white-space: nowrap;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    top: 35%;
+  }
+
+  .hero h1 {
+    letter-spacing: 2px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .down {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+    margin: 60px auto;
+  }
+
+  /* Уменьшаем и переставляем пузыри на мобилках */
+  .pos-1 {
+    display: none;
+  }
+  .pos-2 {
+    width: 20vw;
+    top: 10%;
+    left: 10%;
+  }
+  .pos-3 {
+    width: 25vw;
+    top: 0;
+    right: 20%;
+  }
+  .pos-4 {
+    display: none;
+  }
+  .pos-5 {
+    display: none;
+  }
+  .pos-6 {
+    width: 15vw;
+    bottom: 25%;
+    left: 15%;
+    top: auto;
+  }
+  .pos-7 {
+    width: 20vw;
+    bottom: 20%;
+    right: 15%;
+    top: auto;
+  }
+  .pos-8 {
+    display: none;
+  }
+  .pos-9 {
+    width: 50vw;
+    bottom: 5%;
+    left: 20%;
+    top: auto;
+    min-width: auto; /* Убираем min-width, чтобы не ломалось */
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* Одна колонка на мобильных */
+    gap: 20px;
+  }
+
+  .project {
+    height: 110px;
+    border-radius: 30px;
+  }
+
+  #contacts {
+    margin-top: 50px;
+    padding: 60px 8%;
+  }
+
+  #contacts::before {
+    width: 150vw; /* Уменьшили круг для мобилок */
+    height: 150vw;
+  }
+
+  .contacts-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Очень маленькие экраны (400px) */
+@media screen and (max-width: 400px) {
+  .project {
+    height: 90px;
+    font-size: 24px;
+  }
+
+  .project::after {
+    width: 50px;
+    height: 50px;
+  }
+}
