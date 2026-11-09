@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Моё портфолио</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Главная -->
+    <header id="home">
+      <nav>
+        <a href="#home">Главная</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="hero">
+        <h1>ГРАФИЧЕСКИЙ ДИЗАЙН</h1>
+        <p>РАЗРАБОТКА САЙТОВ</p>
+        <a href="#projects" class="down"
+          ><span class="bi bi-arrow-down"></span
+        ></a>
+      </div>
+    </header>
+
+    <!-- Декоративные круги -->
+    <div class="bubbles-grid">
+      <img src="img/bubble1.png" class="bubble-img pos-1" alt="Шар" />
+      <img src="img/bubble2.png" class="bubble-img pos-2" alt="Шар" />
+      <img src="img/bubble3.png" class="bubble-img pos-3" alt="Шар" />
+      <img src="img/bubble4.png" class="bubble-img pos-4" alt="Шар" />
+      <img src="img/bubble5.png" class="bubble-img pos-5" alt="Шар" />
+      <img src="img/bubble6.png" class="bubble-img pos-6" alt="Шар" />
+      <img src="img/bubble7.png" class="bubble-img pos-7" alt="Шар" />
+      <img src="img/bubble8.png" class="bubble-img pos-8" alt="Шар" />
+      <img src="img/bubble9.png" class="bubble-img pos-9" alt="Шар" />
+    </div>
+
+    <!-- Проекты -->
+    <section id="projects">
+      <h2>МОИ ПРОЕКТЫ</h2>
+
+      <div class="projects-grid">
+        <a href="#" class="project"><span class="bi bi-arrow-right"></span></a>
+        <a href="#" class="project"><span class="bi bi-arrow-right"></span></a>
+        <a href="#" class="project"><span class="bi bi-arrow-right"></span></a>
+        <a href="#" class="project"><span class="bi bi-arrow-right"></span></a>
+        <a href="#" class="project"><span class="bi bi-arrow-right"></span></a>
+        <a href="#" class="project"><span class="bi bi-arrow-right"></span></a>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts">
+      <h2>СВЯЗЬ СО МНОЙ</h2>
+
+      <div class="contacts-list">
+        <a href="https://vk.com/vladakoneva" class="contact"
+          ><img src="img/vk.png" /> Вконтакте
+          <span class="bi bi-arrow-right"></span
+        ></a>
+        <a href="https://t.me/Vlada279" class="contact"
+          ><img src="img/tg.png" /> telegram
+          <span class="bi bi-arrow-right"></span
+        ></a>
+        <button class="contact" id="openFormBtn">
+          <img src="img/email.png" /> email
+          <span class="bi bi-arrow-right"></span>
+        </button>
+        <!-- МОДАЛЬНОЕ ОКНО С ФОРМОЙ -->
+        <dialog
+          id="contactDialog"
+          style="
+            background: #0f1218;
+            color: #fff;
+            border: 1px solid #4a5a6a;
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            font-family: inherit;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+          "
+        >
+          <!-- Кнопка закрытия (крестик) -->
+          <button
+            id="closeFormBtn"
+            style="
+              position: absolute;
+              top: 15px;
+              right: 15px;
+              background: transparent;
+              border: none;
+              color: #a0b0c0;
+              font-size: 24px;
+              cursor: pointer;
+              padding: 5px;
+            "
+          >
+            ✕
+          </button>
+
+          <h3
+            style="
+              margin-top: 0;
+              margin-bottom: 20px;
+              font-size: 22px;
+              font-weight: normal;
+              letter-spacing: 1px;
+            "
+          >
+            СВЯЗЬ СО МНОЙ
+          </h3>
+
+          <!-- ФОРМА  -->
+          <form
+            action="https://formspree.io/f/mljjkqqj"
+            method="POST"
+            class="contact-form"
+            id="actualForm"
+          >
+            <div class="form-group">
+              <label for="name">Ваше имя</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Имя"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Ваш Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="example@mail.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Сообщение</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                placeholder="Описание ТЗ"
+              ></textarea>
+            </div>
+
+            <!-- Защита от спама -->
+            <input type="text" name="_gotcha" style="display: none" />
+
+            <button type="submit" class="submit-btn">
+              Отправить сообщение <span class="bi bi-arrow-right"></span>
+            </button>
+          </form>
+        </dialog>
+      </div>
+    </section>
+
+    <footer>работа выполнена с целью демонстрации навыков</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
